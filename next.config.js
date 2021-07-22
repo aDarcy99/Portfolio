@@ -1,14 +1,13 @@
 module.exports = {
   webpack: (config, options) => {
     config.module.rules.push({
-      test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-      use: {
+      test: /\.(png|woff|woff2|eot|}ttf|svg)$/,
+      use: [{
         loader: 'url-loader',
         options: {
-          limit: 100000,
-          name: '[name].[ext]'
+          limit: 100000
         }
-      }
+      }]
     })
     return config
   },
