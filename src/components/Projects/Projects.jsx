@@ -79,7 +79,7 @@ const Projects = ({ children, ...props }) => {
           image: "https://picsum.photos/450/300",
           links: {
             github: "https://github.com/aDarcy99/themerig",
-            demo: "/",
+            demo: "#",
           },
           description: `
             A customizable theme component I created which is inspired by Material UI's theme component except with a lot of the missing functionality I found it was missing.
@@ -95,8 +95,8 @@ const Projects = ({ children, ...props }) => {
           title: "The Royal Game of Ur",
           image: "https://picsum.photos/450/300",
           links: {
-            github: "/",
-            demo: "",
+            github: "#",
+            demo: "#",
           },
           description: `
             I recreated a 4000 year old game.
