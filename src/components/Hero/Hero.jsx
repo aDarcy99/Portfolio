@@ -66,7 +66,7 @@ const Hero = ({ ...props }) => {
       <div className={classes.heroImageContainer}>
         <Image
           className={classes.heroImage}
-          src={"/heroImage.jpg"}
+          src={"/images/heroImage.jpg"}
           width={450}
           height={450}
         />
