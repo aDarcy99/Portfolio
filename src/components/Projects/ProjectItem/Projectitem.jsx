@@ -20,12 +20,17 @@ const useStyles = createUseStyles((theme) => ({
     transition: "all 0.3s",
     backgroundColor: theme.palette.defaults.card,
   },
+  itemImage: {
+    position: "relative",
+    width: "450px",
+    height: "300px",
+    flexShrink: 0,
+  },
   itemContent: {
     display: "flex",
     flexDirection: "column",
     marginLeft: `${theme.spacing(4)}px`,
   },
-  itemImage: {},
   builtWithContainer: {
     display: "flex",
     flexWrap: "wrap",
@@ -41,16 +46,16 @@ const useStyles = createUseStyles((theme) => ({
   livePreviewButton: {
     marginRight: `${theme.spacing(1)}px`,
   },
-  numberContainer: {
-    position: "relative",
-    borderRight: "1px solid white",
-    display: "flex",
-    alignItems: "flex-end",
-    marginLeft: `${theme.spacing(3)}px`,
-  },
-  numberWrapper: {
-    transform: "rotateZ(-90deg)",
-  },
+  // numberContainer: {
+  //   position: "relative",
+  //   borderRight: "1px solid white",
+  //   display: "flex",
+  //   alignItems: "flex-end",
+  //   marginLeft: `${theme.spacing(3)}px`,
+  // },
+  // numberWrapper: {
+  //   transform: "rotateZ(-90deg)",
+  // },
 }));
 
 const ProjectItem = ({
@@ -66,55 +71,60 @@ const ProjectItem = ({
   const classes = useStyles();
 
   return (
-    <section className={classes.itemContainer}>
-      <img src={image} width={450} height={300}/>
-      {/* <div className={classes.numberContainer}>
+    <React.Fragment>
+      <section className={classes.itemContainer}>
+        <div className={classes.itemImage}>
+          <Image src={image} layout="fill" objectFit="fill" />
+        </div>
+        {/* <div className={classes.numberContainer}>
         <Typography
-          className={classes.numberWrapper}
-          fontSize={theme.typography.body2.fontSize}
-          color={theme.palette.secondary.main}
+        className={classes.numberWrapper}
+        fontSize={theme.typography.body2.fontSize}
+        color={theme.palette.secondary.main}
         >
-          {number}
+        {number}
         </Typography>
       </div> */}
-      <div className={classes.itemContent}>
-        <Typography component="h2" marginBottom={`${theme.spacing(2)}px`}>
-          {title}
-        </Typography>
-        <Typography
-          marginBottom={`${theme.spacing(1)}px`}
-          color={colors.grey[4]}
-          lineHeight="140%"
-        >
-          {description}
-        </Typography>
-        {/* <ReadMore href="/" /> */}
-        <div className={classes.bottomContent}>
-          <div className={classes.builtWithContainer}>
-            <Typography
-              marginBottom={`${theme.spacing(1)}px`}
-              color={colors.grey[4]}
-            >
-              Built With:{" "}
-            </Typography>
-            {builtWith.map((technology) => (
-              <Tag key={technology.name} {...technology} />
-            ))}
+        <div className={classes.itemContent}>
+          <Typography component="h2" marginBottom={`${theme.spacing(2)}px`}>
+            {title}
+          </Typography>
+          <Typography
+            marginBottom={`${theme.spacing(1)}px`}
+            color={colors.grey[4]}
+            lineHeight="140%"
+          >
+            {description}
+          </Typography>
+          {/* <ReadMore href="/" /> */}
+          <div className={classes.bottomContent}>
+            <div className={classes.builtWithContainer}>
+              <Typography
+                marginBottom={`${theme.spacing(1)}px`}
+                color={colors.grey[4]}
+              >
+                Built With:{" "}
+              </Typography>
+              {builtWith.map((technology) => (
+                <Tag key={technology.name} {...technology} />
+              ))}
+            </div>
+            <a href={`${links.demo || "#"}`} target="_blank">
+              <Button className={classes.livePreviewButton} radius="0px">
+                Live Preview{" "}
+                <LinkIcon size="sm" color={theme.palette.primary.text} />
+              </Button>
+            </a>
+            <a href={`${links.github || "#"}`} target="_blank">
+              <Button variant="outlined">
+                Github{" "}
+                <GithubIcon size="sm" color={theme.palette.primary.main} />
+              </Button>
+            </a>
           </div>
-          <a href={`${links.demo || "#"}`} target="_blank">
-            <Button className={classes.livePreviewButton} radius="0px">
-              Live Preview{" "}
-              <LinkIcon size="sm" color={theme.palette.primary.text} />
-            </Button>
-          </a>
-          <a href={`${links.github || "#"}`} target="_blank">
-            <Button variant="outlined">
-              Github <GithubIcon size="sm" color={theme.palette.primary.main} />
-            </Button>
-          </a>
         </div>
-      </div>
-    </section>
+      </section>
+    </React.Fragment>
   );
 };
 
