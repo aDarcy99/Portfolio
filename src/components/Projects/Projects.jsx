@@ -25,7 +25,7 @@ const Projects = ({ children, ...props }) => {
       {[
         {
           title: "Your Chances",
-          image: "/images/yourChancesPreview.png",
+          image: "/images/yourChancesPreview.PNG",
           links: {
             github: "https://github.com/aDarcy99/your-chances",
             demo: "https://your-chances.herokuapp.com/",
@@ -45,7 +45,7 @@ const Projects = ({ children, ...props }) => {
         },
         {
           title: "Simple Typing Test",
-          image: "/images/typingTestPreview.png",
+          image: "/images/typingTestPreview.PNG",
           links: {
             github: "https://github.com/aDarcy99/typing-test",
             demo: "https://very-simple-typing-test.herokuapp.com/",
@@ -60,7 +60,7 @@ const Projects = ({ children, ...props }) => {
         },
         {
           title: "Portfolio",
-          image: "/images/portfolioPreview.png",
+          image: "/images/portfolioPreview.PNG",
           links: {
             github: "https://github.com/aDarcy99/Portfolio",
             demo: "#",
