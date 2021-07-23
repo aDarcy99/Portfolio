@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import { createUseStyles, useTheme } from "react-jss";
 //components
@@ -67,7 +66,6 @@ const Hero = ({ ...props }) => {
       <div className={classes.heroImageContainer}>
         <Image
           className={classes.heroImage}
-          placeholder="blur"
           src={"/heroImage.jpg"}
           width={450}
           height={450}

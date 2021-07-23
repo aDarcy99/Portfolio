@@ -5,6 +5,7 @@ import Color from "color";
 //assets
 import { GithubIcon } from "../../../assets/SVGs/technologies/GithubIcon";
 //components
+import Image from "next/image";
 import ReadMore from "../../reusable/ReadMore/ReadMore";
 import { Button, Typography } from "../../reusable/reusable";
 import Tag from "../../Tag/Tag";
@@ -58,6 +59,7 @@ const ProjectItem = ({
   description = "Description",
   builtWith = ["Javascript", "Css", "Html"],
   number,
+  links,
   ...props
 }) => {
   const theme = useTheme();
@@ -65,7 +67,7 @@ const ProjectItem = ({
 
   return (
     <section className={classes.itemContainer}>
-      <img src={image} className={classes.itemImage} />
+      <img src={image} width={450} height={300}/>
       {/* <div className={classes.numberContainer}>
         <Typography
           className={classes.numberWrapper}
@@ -96,18 +98,20 @@ const ProjectItem = ({
               Built With:{" "}
             </Typography>
             {builtWith.map((technology) => (
-              <Tag
-                key={technology.name}
-                {...technology}
-              />
+              <Tag key={technology.name} {...technology} />
             ))}
           </div>
-          <Button className={classes.livePreviewButton} radius="0px">
-            Live Preview <LinkIcon size="sm" color={theme.palette.primary.text} />
-          </Button>
-          <Button variant="outlined">
-            Github <GithubIcon size="sm" color={theme.palette.primary.main} />
-          </Button>
+          <a href={`${links.demo || "#"}`} target="_blank">
+            <Button className={classes.livePreviewButton} radius="0px">
+              Live Preview{" "}
+              <LinkIcon size="sm" color={theme.palette.primary.text} />
+            </Button>
+          </a>
+          <a href={`${links.github || "#"}`} target="_blank">
+            <Button variant="outlined">
+              Github <GithubIcon size="sm" color={theme.palette.primary.main} />
+            </Button>
+          </a>
         </div>
       </div>
     </section>
