@@ -19,12 +19,28 @@ const useStyles = createUseStyles((theme) => ({
     display: "flex",
     transition: "all 0.3s",
     backgroundColor: theme.palette.defaults.card,
+    alignItems: "center",
+    [`@media (max-width: ${theme.viewports.md})`]: {
+      flexDirection: "column",
+      "& $itemImage": {
+        marginBottom: `${theme.spacing(2)}px`,
+      },
+    },
+    [`@media (max-width: ${theme.viewports.xs})`]: {
+      "& button": {
+        width: "100%"
+      },
+    },
   },
   itemImage: {
     position: "relative",
-    width: "450px",
+    width: theme.pxToRem(450),
     height: "300px",
     flexShrink: 0,
+    [`@media (max-width: ${theme.viewports.sm})`]: {
+      width: "100%",
+      height: "250px"
+    },
   },
   itemContent: {
     display: "flex",
@@ -45,6 +61,9 @@ const useStyles = createUseStyles((theme) => ({
   },
   livePreviewButton: {
     marginRight: `${theme.spacing(1)}px`,
+    [`@media (max-width: ${theme.viewports.xs})`]: {
+      marginBottom: theme.spacing(2, "px"),
+    },
   },
   // numberContainer: {
   //   position: "relative",

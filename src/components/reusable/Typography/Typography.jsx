@@ -7,7 +7,7 @@ const useStyles = createUseStyles((theme) => ({
     display: props.display || "",
     color: props.color || "",
     fontFamily: props.fontFamily || "",
-    fontSize: props.fontSize || "",
+    fontSize: theme.pxToRem(props.fontSize) || "",
     fontWeight: props.fontWeight || "",
     textTransform: props.textTransform || "",
     lineHeight: props.lineHeight || "",

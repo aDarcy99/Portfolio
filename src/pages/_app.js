@@ -49,6 +49,9 @@ let theme = createTheme({
       fontSize: 96,
       fontWeight: 800
     }
+  },
+  viewports: {
+    xs: "400px"
   }
 });
 export default function MyApp(props) {

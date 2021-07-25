@@ -1,4 +1,5 @@
 import React from "react";
+import { createUseStyles } from "react-jss";
 //assets
 import {
   CssIcon,
@@ -14,13 +15,26 @@ import {
   BabelIcon,
 } from "../../assets/SVGs/assets";
 import NoneIcon from "../../assets/SVGs/technologies/NoneIcon";
+
+const useStyles = createUseStyles((theme) => ({
+  projectsContainer: {
+    [`@media (max-width: ${theme.viewports.lg})`]: {
+      margin: `0 ${theme.spacing(2)}px`,
+    },
+  },
+}));
 //components
 import { Heading, Container } from "../reusable/reusable";
 import ProjectItem from "./ProjectItem/Projectitem";
 
 const Projects = ({ children, ...props }) => {
+  const classes = useStyles();
   return (
-    <Container component="section" id="projects">
+    <Container
+      component="section"
+      id="projects"
+      className={classes.projectsContainer}
+    >
       <Heading number="1.0">Projects</Heading>
       {[
         {

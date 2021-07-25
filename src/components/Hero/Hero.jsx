@@ -9,6 +9,9 @@ const useStyles = createUseStyles((theme) => ({
   heroContainer: {
     minHeight: "100vh",
     paddingTop: `${theme.spacing(12)}px`,
+    [`@media (max-width: ${theme.viewports.lg})`]: {
+      margin: `0 ${theme.spacing(2)}px`,
+    },
   },
   heroBody: {
     maxWidth: "600px",
@@ -21,6 +24,10 @@ const useStyles = createUseStyles((theme) => ({
     position: "absolute",
     bottom: "100px",
     left: "50vw",
+    zIndex: -1,
+    [`@media (max-width: ${theme.viewports.md})`]: {
+      visibility: "hidden"
+    },
   },
   heroImage: {
     borderRadius: "50%",
@@ -30,6 +37,8 @@ const useStyles = createUseStyles((theme) => ({
 const Hero = ({ ...props }) => {
   const theme = useTheme();
   const classes = useStyles();
+
+  console.log(theme)
   return (
     <Container component="section" id="hero" className={classes.heroContainer}>
       <Typography component="h1" fontSize={theme.typography.h4.fontSize}>

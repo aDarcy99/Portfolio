@@ -27,18 +27,27 @@ import Tag from "../Tag/Tag";
 import { Container, Heading, Typography } from "../reusable/reusable";
 
 const useStyles = createUseStyles((theme) => ({
+  myStackContainer: {
+    [`@media (max-width: ${theme.viewports.lg})`]: {
+      margin: `0 ${theme.spacing(2)}px`,
+    },
+  },
   listContainer: {
     "& div": {
       margin: `0 ${theme.spacing(2)}px ${theme.spacing(2)}px 0`,
-    }
+    },
   },
 }));
 
 const MyStack = (props) => {
   const theme = useTheme();
-  const classes = useStyles()
+  const classes = useStyles();
   return (
-    <Container component="section" id="my-stack">
+    <Container
+      component="section"
+      id="my-stack"
+      className={classes.myStackContainer}
+    >
       <Heading>My Stack</Heading>
       <Typography marginBottom={`${theme.spacing(2)}px`}>
         These are the technologies that I've used so far, but I'm always open to
@@ -50,7 +59,7 @@ const MyStack = (props) => {
         <Tag variant="card" svg={<ReactIcon />} name="React" />
         <Tag variant="card" svg={<HtmlIcon />} name="HTML" />
         <Tag variant="card" svg={<CssIcon />} name="CSS" />
-        <Tag variant="card" svg={<GithubIcon size="md"/>} name="Github" />
+        <Tag variant="card" svg={<GithubIcon size="md" />} name="Github" />
         <Tag variant="card" svg={<NpmIcon />} name="NPM" />
         <Tag variant="card" svg={<NodeJsIcon />} name="NodeJs" />
         <Tag variant="card" svg={<ExpressIcon />} name="ExpressJs" />
@@ -60,9 +69,23 @@ const MyStack = (props) => {
         <Tag variant="card" svg={<JssIcon />} name="Jss" />
         <Tag variant="card" svg={<EjsIcon />} name="EJS" />
         <Tag variant="card" svg={<PhotoshopIcon />} name="Photoshop" />
-        <Tag variant="card" svg={<StyledComponentsIcon />} name="Styled Components" />
-        <Tag className={classes.Tag} variant="card" svg={<WebpackIcon />} name="Webpack" />
-        <Tag className={classes.Tag} variant="card" svg={<BabelIcon />} name="Babel" />
+        <Tag
+          variant="card"
+          svg={<StyledComponentsIcon />}
+          name="Styled Components"
+        />
+        <Tag
+          className={classes.Tag}
+          variant="card"
+          svg={<WebpackIcon />}
+          name="Webpack"
+        />
+        <Tag
+          className={classes.Tag}
+          variant="card"
+          svg={<BabelIcon />}
+          name="Babel"
+        />
       </div>
     </Container>
   );

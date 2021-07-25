@@ -2,12 +2,12 @@ import clsx from "clsx";
 import React from "react";
 import { createUseStyles } from "react-jss";
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme) => ({
   container: (props) => ({
     margin: "0 auto",
     maxWidth: props.maxWidth,
   }),
-});
+}));
 
 export const Container = ({
   children,

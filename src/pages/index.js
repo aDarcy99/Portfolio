@@ -11,8 +11,8 @@ function IndexPage() {
   return (
     <main>
       <Hero />
-      <MyStack />
       <Projects />
+      <MyStack />
       <AboutMe />
       <GetInTouch />
       <Footer />

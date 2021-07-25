@@ -10,7 +10,11 @@ import { Heading, Container, Typography } from "../reusable/reusable";
 import Tag from "../Tag/Tag";
 
 const useStyles = createUseStyles((theme) => ({
-  container: {},
+  getInTouchContainer: {
+    [`@media (max-width: ${theme.viewports.lg})`]: {
+      margin: `0 ${theme.spacing(2)}px`,
+    },
+  },
   platform: {
     cursor: "pointer",
     color: theme.palette.defaults.text.body,
@@ -26,6 +30,12 @@ const useStyles = createUseStyles((theme) => ({
         fill: theme.palette.primary.main,
       },
     },
+    [`@media (max-width: ${theme.viewports.sm})`]: {
+      marginBottom: theme.spacing(2, "px")
+    },
+    [`@media (max-width: ${theme.viewports.xs})`]: {
+      width: "100%"
+    },
   },
 }));
 
@@ -34,7 +44,11 @@ const GetInTouch = ({ ...props }) => {
   const classes = useStyles();
 
   return (
-    <Container id="get-in-touch" component="section">
+    <Container
+      id="get-in-touch"
+      component="section"
+      className={classes.getInTouchContainer}
+    >
       <Heading number="3.0">Get In Touch</Heading>
       <Typography marginBottom={`${theme.spacing(2)}px`}>
         I’m currently looking for work in Sydney and Brisbane. If you like my
