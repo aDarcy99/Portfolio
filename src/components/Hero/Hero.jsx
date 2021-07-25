@@ -37,8 +37,6 @@ const useStyles = createUseStyles((theme) => ({
 const Hero = ({ ...props }) => {
   const theme = useTheme();
   const classes = useStyles();
-
-  console.log(theme)
   return (
     <Container component="section" id="hero" className={classes.heroContainer}>
       <Typography component="h1" fontSize={theme.typography.h4.fontSize}>
